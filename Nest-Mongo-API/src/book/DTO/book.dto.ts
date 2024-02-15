@@ -1,9 +1,17 @@
-import { PartialType } from "@nestjs/mapped-types";
+import { Category } from "../schema/book.schema";
 
 export class CreateBookDto {
-    title: string;
-    author: string;
-    published: number;
+    readonly title: string;
+    readonly description: string;
+    readonly author: string;
+    readonly price: number;
+    readonly category: Category;
 };
 
-export class UpdateBookDto extends PartialType(CreateBookDto) { };
+export class UpdateBookDto {
+    readonly title: string;
+    readonly description: string;
+    readonly author: string;
+    readonly price: number;
+    readonly category: Category;
+};
