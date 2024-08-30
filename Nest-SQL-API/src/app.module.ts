@@ -1,11 +1,13 @@
 import { PrismaModule } from "./prisma/prisma.module";
+import { BooksModule } from "./books/books.module";
 import { AuthModule } from "./auth/auth.module";
 import { Module } from "@nestjs/common";
 
 @Module({
   imports: [
-    AuthModule,
-    PrismaModule
+    PrismaModule,
+    BooksModule,
+    AuthModule
   ],
   controllers: [],
   providers: []
