@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
 
 export class CreateBookDTO {
     @IsNotEmpty()
@@ -16,6 +16,10 @@ export class CreateBookDTO {
     @IsNotEmpty()
     @IsString()
     readonly price: string;
+
+    @IsNotEmpty()
+    @IsNumber()
+    readonly userId: number;
 };
 
 export class UpdateBookDTO {
@@ -34,4 +38,8 @@ export class UpdateBookDTO {
     @IsOptional()
     @IsString()
     readonly price: string;
+
+    @IsNotEmpty()
+    @IsNumber()
+    readonly userId: number;
 };

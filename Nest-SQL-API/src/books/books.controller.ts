@@ -1,6 +1,7 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post, Put, Req, UseGuards } from "@nestjs/common";
 import { CreateBookDTO, UpdateBookDTO } from "./DTO/book.dto";
 import { BooksService } from "./books.service";
+import { AuthGuard } from "@nestjs/passport";
 import { Book } from "@prisma/client";
 
 @Controller("books")
@@ -13,9 +14,10 @@ export class BooksController {
         return this.booksService.findAll();
     };
 
+    @UseGuards(AuthGuard())
     @Post()
-    async createBook(@Body() book: CreateBookDTO): Promise<Book> {
-        return this.booksService.create(book);
+    async createBook(@Body() book: CreateBookDTO, @Req() req): Promise<Book> {
+        return this.booksService.create(book, req.user);
     };
 
     @Get(":id")

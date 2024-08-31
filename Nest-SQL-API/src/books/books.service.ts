@@ -1,5 +1,6 @@
 import { PrismaService } from "../prisma/prisma.service";
 import { Injectable } from "@nestjs/common";
+import { User } from "@prisma/client";
 
 @Injectable()
 export class BooksService {
@@ -10,9 +11,10 @@ export class BooksService {
         return this.prisma.book.findMany();
     };
 
-    async create(createBookDTO: any) {
+    async create(createBookDTO: any, user: User) {
+        const data = Object.assign(createBookDTO, { user: user.id });
         return this.prisma.book.create({
-            data: createBookDTO
+            data: data
         });
     };
 
