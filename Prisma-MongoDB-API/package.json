@@ -1,7 +1,7 @@
 {
-  "name": "prisma-mongo",
+  "name": "mongo-api",
   "version": "0.0.1",
-  "author": "AhmedShaykh",
+  "author": "Ahmed Saleem Shaikh",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {

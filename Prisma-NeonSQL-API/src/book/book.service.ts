@@ -15,7 +15,7 @@ export class BookService {
         });
     };
 
-    getBookById(userId: string, bookId: number) {
+    getBookById(userId: string, bookId: string) {
         return this.prisma.book.findFirst({
             where: {
                 id: bookId,
@@ -35,7 +35,7 @@ export class BookService {
         return book;
     };
 
-    async editBook(userId: string, bookId: number, dto: EditBookDTO) {
+    async editBook(userId: string, bookId: string, dto: EditBookDTO) {
 
         const book = await this.prisma.book.findUnique({
             where: {
@@ -60,7 +60,7 @@ export class BookService {
 
     };
 
-    async deleteBook(userId: string, bookId: number) {
+    async deleteBook(userId: string, bookId: string) {
 
         const book = await this.prisma.book.findUnique({
             where: {

@@ -34,7 +34,7 @@ export class BookController {
     })
     getBookById(@GetUser("id") userId: string, @Param("id") bookId: string) {
         return this.bookService.getBookById(
-            userId, +bookId
+            userId, bookId
         );
     };
 
@@ -64,7 +64,7 @@ export class BookController {
     })
     editBookById(@GetUser("id") userId: string, @Param("id") bookId: string, @Body() dto: EditBookDTO) {
         return this.bookService.editBook(
-            userId, +bookId, dto
+            userId, bookId, dto
         );
     };
 
@@ -79,7 +79,7 @@ export class BookController {
     })
     deleteBook(@GetUser("id") userId: string, @Param("id") bookId: string) {
         return this.bookService.deleteBook(
-            userId, +bookId
+            userId, bookId
         );
     };
 

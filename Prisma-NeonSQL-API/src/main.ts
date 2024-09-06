@@ -10,7 +10,7 @@ async function bootstrap() {
   app.enableCors({
     origin: [
       "http://localhost:8080",
-      "http://localhost:8000"
+      "http://localhost:3000"
     ],
     methods: "GET,HEAD,PUT,POST,DELETE",
     credentials: true
@@ -22,8 +22,8 @@ async function bootstrap() {
 
 
   const options = new DocumentBuilder()
-    .setTitle("Your API")
-    .setDescription("API description")
+    .setTitle("Nest.JS Prisma Neon SQL API")
+    .setDescription("Full Stack Nest.JS Prisma Neon SQL API")
     .setVersion("1.0")
     .build();
 
