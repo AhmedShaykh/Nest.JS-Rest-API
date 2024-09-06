@@ -11,9 +11,9 @@ import { Module } from "@nestjs/common";
       isGlobal: true
     }),
     PrismaModule,
-    BookModule,
     AuthModule,
-    UserModule
+    UserModule,
+    BookModule,
   ],
   controllers: [],
   providers: [],
