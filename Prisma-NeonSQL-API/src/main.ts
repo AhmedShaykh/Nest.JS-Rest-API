@@ -20,7 +20,6 @@ async function bootstrap() {
 
   app.setGlobalPrefix("api");
 
-
   const options = new DocumentBuilder()
     .setTitle("Nest.JS Prisma Neon SQL API")
     .setDescription("Full Stack Nest.JS Prisma Neon SQL API")
